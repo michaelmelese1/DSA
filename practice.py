@@ -55,5 +55,12 @@
 #     drivingAllowance(drivingLicenseresalt)
 
 
-nums = [1,12,35,3,23,2,13,55,6,4]
-print(nums[0:4])
+# nums = [1,12,35,3,23,2,13,55,6,4]
+# print(nums[0:4])
+
+thisdict = {
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964 }
+thisdict.update({"year":"2000"})
+print(thisdict)
