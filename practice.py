@@ -58,9 +58,32 @@
 # nums = [1,12,35,3,23,2,13,55,6,4]
 # print(nums[0:4])
 
-thisdict = {
-"brand": "Ford",
-"model": "Mustang",
-"year": 1964 }
-thisdict.update({"year":"2000"})
-print(thisdict)
+# thisdict = {
+# "brand": "Ford",
+# "model": "Mustang",
+# "year": 1964 }
+# thisdict.update({"year":"2000"})
+# print(thisdict)
+
+myfamily = {
+    "child1" : { 
+        "age" : "10",
+        "name" : "matt"
+        },
+    "child2" : {
+        "age" : "12",
+        "name" : "nati"
+    }
+}
+print(myfamily["child1"]["age"])
+
+
+
+personalInfo = {
+    "name":"miki",
+    "age" : "15",
+    "school" : "pharo"
+}
+personalInfo.pop("age")
+personalInfo["name"] = "abel"
+print(personalInfo)
