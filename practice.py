@@ -65,25 +65,44 @@
 # thisdict.update({"year":"2000"})
 # print(thisdict)
 
-myfamily = {
-    "child1" : { 
-        "age" : "10",
-        "name" : "matt"
-        },
-    "child2" : {
-        "age" : "12",
-        "name" : "nati"
-    }
-}
-print(myfamily["child1"]["age"])
+# myfamily = {
+#     "child1" : { 
+#         "age" : "10",
+#         "name" : "matt"
+#         },
+#     "child2" : {
+#         "age" : "12",
+#         "name" : "nati"
+#     }
+# }
+# print(myfamily["child1"]["age"])
 
 
 
-personalInfo = {
-    "name":"miki",
-    "age" : "15",
-    "school" : "pharo"
-}
-personalInfo.pop("age")
-personalInfo["name"] = "abel"
-print(personalInfo)
+# personalInfo = {
+#     "name":"miki",
+#     "age" : "15",
+#     "school" : "pharo"
+# }
+# personalInfo.pop("age")
+# personalInfo["name"] = "abel"
+# print(personalInfo)
+
+
+# new leetcode problem solution
+class Solution:
+ def leftRightDifference(self, nums: List[int]) -> List[int]:
+    n = len(nums)
+    ans = [0] * n
+
+    left_sum = 0
+    for i in range(n):
+        ans[i] = left_sum
+        left_sum += nums[i]
+
+        right_sum = 0
+        for i in range(n - 1, -1, -1):
+            ans[i] = abs(ans[i] - right_sum)
+            right_sum += nums[i]
+
+        return ans
