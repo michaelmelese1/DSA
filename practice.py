@@ -109,12 +109,19 @@
 
 # Implementing a stack is trivial using a dynamic array
 
-class Stack:
-    def __init__(self):
-        self.stack = []
+# class Stack:
+#     def __init__(self):
+#         self.stack = []
 
-    def push(self, n):
-        self.stack.append(n)
+#     def push(self, n):
+#         self.stack.append(n)
 
-    def pop(self):
-        return self.stack.pop()
+#     def pop(self):
+#         return self.stack.pop()
+class Car:
+    def __init__(self,model,year,price):
+        self.model = model
+        self.year = year
+        self.price = price
+        car1 = Car("v8","2018","1.9m")
+        print(car1.model)
