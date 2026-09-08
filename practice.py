@@ -118,10 +118,18 @@
 
 #     def pop(self):
 #         return self.stack.pop()
-class Car:
-    def __init__(self,model,year,price):
-        self.model = model
-        self.year = year
-        self.price = price
-        car1 = Car("v8","2018","1.9m")
-        print(car1.model)
+# class Car:
+#     def __init__(self,model,year,price):
+#         self.model = model
+#         self.year = year
+#         self.price = price
+#         car1 = Car("v8","2018","1.9m")
+#         print(car1.model)
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        dict1 = {}
+        for i in range(len(nums)):
+            diff = target - nums[i]
+            if diff in dict1:
+                return(dict1[diff], i)
+            dict1[nums[i]] = i
