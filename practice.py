@@ -125,11 +125,27 @@
 #         self.price = price
 #         car1 = Car("v8","2018","1.9m")
 #         print(car1.model)
+# class Solution:
+#     def twoSum(self, nums: List[int], target: int) -> List[int]:
+#         dict1 = {}
+#         for i in range(len(nums)):
+#             diff = target - nums[i]
+#             if diff in dict1:
+#                 return(dict1[diff], i)
+#             dict1[nums[i]] = i
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        dict1 = {}
-        for i in range(len(nums)):
-            diff = target - nums[i]
-            if diff in dict1:
-                return(dict1[diff], i)
-            dict1[nums[i]] = i
+    def isValid(self, s: str) -> bool:
+        ans = []
+        openClose = {")":"(",
+                     "}":"{",
+                     "]":"[" 
+                    }
+        for i in s:
+            if i in openClose:
+                if ans and ans[-1] == openClose[i]:
+                    ans.pop() 
+                else:
+                    return False
+            else:
+                ans.append(i)
+        return True if not ans else False
